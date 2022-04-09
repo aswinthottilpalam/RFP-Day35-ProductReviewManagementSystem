@@ -120,5 +120,21 @@ namespace ProductReviewManagementSystem
             return result;
         }
 
+        /// <summary>
+        /// UC6---- skip top 5 rcords and retrive other data
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static void SkipTop5RecordsFromListAndRetrieveOtherData(List<ProductReview> list)
+        {
+            //Query syntax for LINQ 
+            var result = (from product in list orderby product.rating descending select product).Skip(5);
+            var remainingRecords = result;
+            foreach (ProductReview product in remainingRecords)
+            {
+                Console.WriteLine("ProductId : " + product.productId + " UserId : " + product.userId + " Rating : " + product.rating + " Review : " + product.review + " IsLike : " + product.isLike);
+            }
+        }
+
     }
 }
