@@ -54,5 +54,19 @@ namespace ProductReviewManagementSystem
             }
         }
 
+        /// <summary>
+        /// UC2--Retrieve Top Three Records from the list Whose Rating is High
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static int RetrieveTopThreeRating(List<ProductReview> products)
+        {
+            AddingProductReview(products);
+            Console.WriteLine("\n-------------Retrieving Top Three Records in the list Based On Rating--------------");
+            var res = (from product in products orderby product.rating descending select product).Take(3).ToList();
+            IterateThroughList(res);
+            return res.Count;
+        }
+
     }
 }
