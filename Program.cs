@@ -22,6 +22,9 @@ namespace ProductReviewManagementSystem
                 case 2:
                     Management.RetrieveTopThreeRating(productReviews);
                     break;
+                case 3:
+                    Management.RetrieveRecordsBasedOnRatingAndProductId(productReviews);
+                    break;
             }
         }
     }
