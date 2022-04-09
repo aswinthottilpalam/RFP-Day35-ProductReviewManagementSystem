@@ -19,6 +19,9 @@ namespace ProductReviewManagementSystem
                 case 1:
                     Management.AddingProductReview(productReviews);
                     break;
+                case 2:
+                    Management.RetrieveTopThreeRating(productReviews);
+                    break;
             }
         }
     }
