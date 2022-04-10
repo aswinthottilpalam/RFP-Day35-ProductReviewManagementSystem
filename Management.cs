@@ -136,5 +136,19 @@ namespace ProductReviewManagementSystem
             }
         }
 
+        /// <summary>
+        /// UC7---- Retrieve product Id and review from list of records
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static void RetrieveProductIDAndReview1(List<ProductReview> productReviewsList)
+        {
+            var p = productReviewsList.Select(product => new { productID = product.productId, review = product.review });
+            foreach (var element in p)
+            {
+                Console.WriteLine("ProductID: " + element.productID + "\t" + "Review:" + element.review);
+            }
+        }
+
     }
 }

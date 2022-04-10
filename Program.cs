@@ -34,6 +34,9 @@ namespace ProductReviewManagementSystem
                 case 6:
                     Management.SkipTop5RecordsFromListAndRetrieveOtherData(productReviews);
                     break;
+                case 7:
+                    Management.RetrieveProductIDAndReview1(productReviews);
+                    break;
             }
         }
     }
